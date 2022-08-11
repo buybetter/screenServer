@@ -16,7 +16,7 @@
                 return;
             }
 
-            socket = io.connect('https://screenserv.herokuapp.com/');
+            socket = io.connect('https://screenserv.herokuapp.com', {secure: true});
 
             socket.emit("join-message", room);
             socket.on('screen-data', function(message){
